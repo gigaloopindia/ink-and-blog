@@ -1,6 +1,6 @@
 
-import React, { useState } from 'react';
-import Sidebar from './Sidebar';
+import React from 'react';
+import TopNavigation from './TopNavigation';
 import { cn } from '@/lib/utils';
 
 interface LayoutProps {
@@ -9,19 +9,11 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children, className }) => {
-  const [sidebarOpen, setSidebarOpen] = useState(true);
-  
   return (
-    <div className="flex min-h-screen bg-background">
-      <Sidebar isOpen={sidebarOpen} setIsOpen={setSidebarOpen} />
+    <div className="min-h-screen bg-background">
+      <TopNavigation />
       
-      <main 
-        className={cn(
-          "flex-1 transition-all duration-300 ease-in-out",
-          sidebarOpen ? "ml-64" : "ml-16",
-          className
-        )}
-      >
+      <main className={cn("flex-1", className)}>
         <div className="container py-6 px-4">
           {children}
         </div>
