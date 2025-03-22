@@ -1,6 +1,9 @@
 
 import React from 'react';
 import Layout from '@/components/Layout';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 
 const Index = () => {
   // Sample travel locations
@@ -26,7 +29,7 @@ const Index = () => {
           </p>
           
           {/* Featured Travel Content */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
             {travelLocations.map((location, index) => (
               <div 
                 key={index}
@@ -45,6 +48,35 @@ const Index = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </section>
+        
+        {/* About Me Section */}
+        <section className="py-12 border-t border-border">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="aspect-square bg-secondary rounded-lg flex items-center justify-center">
+              <span className="text-lg font-mono text-muted-foreground">Profile Photo</span>
+            </div>
+            
+            <div>
+              <h2 className="font-serif text-3xl md:text-4xl font-semibold mb-6">About Me</h2>
+              <div className="space-y-4 text-muted-foreground">
+                <p>
+                  I'm a designer and creative thinker specializing in minimal, human-centered design. For over 8 years, I've worked with clients and companies to create thoughtful digital experiences that balance form and function.
+                </p>
+                <p>
+                  My approach is guided by the belief that great design solves real problems through simplicity and clarity. I'm particularly inspired by the design principles of Dieter Rams and the philosophy that less is more.
+                </p>
+                <div className="pt-4">
+                  <Button asChild variant="outline" className="group">
+                    <Link to="/about">
+                      Learn more about me
+                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </div>
