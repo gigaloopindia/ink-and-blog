@@ -31,6 +31,14 @@ const TopNavigation = () => {
                 Portfolio
               </Link>
             </TabsTrigger>
+            <TabsTrigger value="/education" asChild>
+              <Link to="/education" className={cn(
+                "px-4 py-2 font-medium",
+                currentPath === "/education" ? "text-foreground" : "text-muted-foreground"
+              )}>
+                Education
+              </Link>
+            </TabsTrigger>
             <TabsTrigger value="/blog" asChild>
               <Link to="/blog" className={cn(
                 "px-4 py-2 font-medium",
